@@ -92,9 +92,6 @@ p { text-wrap: pretty; }
 }
 .eyebrow--center { display: flex; justify-content: center; }
 .eyebrow--amber { color: var(--amber); }
-/* bar variant: left-side accent line, used in CTA bands instead of flanking rules */
-.eyebrow--bar { padding-left: 14px; position: relative; }
-.eyebrow--bar::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 70%; background: currentColor; border-radius: 2px; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -278,8 +275,6 @@ html[data-hero="banner"] .hero--banner { display: block; }
   background-image: repeating-linear-gradient(45deg, transparent 0 22px, rgba(6,52,71,0.04) 22px 44px);
 }
 .hero-logo { width: min(78%, 460px); height: auto; border-radius: 50%; position: relative; box-shadow: 0 24px 60px rgba(6,52,71,0.28); border: 5px solid var(--navy); }
-.hero-stamps { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-.hero-stamps .stamp { color: var(--cream); }
 
 /* --- EMBLEM --- */
 .hero--emblem { background: var(--cream-bg); padding: 76px 0 90px; text-align: center; overflow: hidden; }
@@ -448,8 +443,8 @@ a.contact-list__val:hover { color: var(--amber-deep); }
   .page-head { padding: 44px 0 52px; }
 
   /* scale headings for small viewports */
-  /* hero display: vw-driven so each line fills ~90% of screen width */
-  .display { font-size: clamp(2.8rem, 16vw, 6rem); line-height: 0.9; letter-spacing: -0.01em; }
+  /* hero display: vw-driven so each line fills the screen; open line-height for breathing room */
+  .display { font-size: clamp(2.8rem, 16vw, 6rem); line-height: 1.12; letter-spacing: -0.01em; }
   h2.section-title { font-size: clamp(1.75rem, 6.5vw, 2.2rem); }
   h3 { font-size: 1.25rem; }
 
@@ -463,8 +458,6 @@ a.contact-list__val:hover { color: var(--amber-deep); }
   .hero-split__art { padding: 36px 18px 44px; }
   .hero-logo { width: min(62%, 240px); }
   .hero-sub { margin-top: 40px; font-size: 1rem; line-height: 1.55; }
-  .hero-stamps { gap: 8px; justify-content: center; flex-wrap: nowrap; margin-top: 28px; }
-  .stamp { font-size: 0.7rem; padding: 5px 9px; letter-spacing: 0.08em; white-space: nowrap; }
 
   /* hero banner */
   .hero--banner { padding: 44px 0; }

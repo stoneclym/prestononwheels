@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-font="oswald">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact · Preston on Wheels</title>
+<meta name="description" content="Call, text or email Preston on Wheels to book mobile auto repair in Wilmington, Leland & Burgaw, NC. 910-756-7261 · clymerautoservice@gmail.com" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="index.html">
+      <img src="assets/logo-circle.png" alt="Preston on Wheels" />
+      <span class="nav__brand-text"><span>Preston on Wheels</span></span>
+    </a>
+    <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+      <svg width="28" height="28"><use href="assets/icons.svg#i-menu"/></svg>
+    </button>
+    <nav class="nav__links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="index.html#area">Service Area</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a class="btn btn--amber nav__phone" href="tel:9107567261"><svg><use href="assets/icons.svg#i-phone"/></svg> 910-756-7261</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section section--cream contact-sec">
+  <div class="container contact-grid">
+    <!-- left: details -->
+    <div class="contact-info reveal">
+      <span class="eyebrow eyebrow--amber both">Get In Touch</span>
+      <h1 class="display">Let's get<br/>you rolling</h1>
+      <p class="lead">The fastest way to book is a call or text. Tell Preston your vehicle, the issue, and where you're located.</p>
+
+      <ul class="contact-list">
+        <li>
+          <span class="contact-list__ic"><svg><use href="assets/icons.svg#i-phone"/></svg></span>
+          <div><span class="contact-list__lbl">Call or Text</span><a class="contact-list__val" href="tel:9107567261">910-756-7261</a></div>
+        </li>
+        <li>
+          <span class="contact-list__ic"><svg><use href="assets/icons.svg#i-mail"/></svg></span>
+          <div><span class="contact-list__lbl">Email</span><a class="contact-list__val" href="mailto:clymerautoservice@gmail.com">clymerautoservice@gmail.com</a></div>
+        </li>
+        <li>
+          <span class="contact-list__ic"><svg><use href="assets/icons.svg#i-pin"/></svg></span>
+          <div><span class="contact-list__lbl">Service Area</span><span class="contact-list__val">Wilmington · Leland · Burgaw</span></div>
+        </li>
+        <li>
+          <span class="contact-list__ic"><svg><use href="assets/icons.svg#i-clock"/></svg></span>
+          <div><span class="contact-list__lbl">Hours</span><span class="contact-list__val">By appointment, call or text</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- right: request form -->
+    <div class="contact-card reveal">
+      <h2>Request a quote</h2>
+      <p class="contact-card__sub">Send the details and Preston will get back to you with a fair, honest price.</p>
+      <form id="quote-form" class="quote-form" novalidate>
+        <label>Your name
+          <input type="text" name="name" required placeholder="Jane Doe" />
+        </label>
+        <div class="form-row">
+          <label>Phone
+            <input type="tel" name="phone" required placeholder="910-555-0123" />
+          </label>
+          <label>City
+            <select name="city">
+              <option>Wilmington</option>
+              <option>Leland</option>
+              <option>Burgaw</option>
+              <option>Nearby, ask</option>
+            </select>
+          </label>
+        </div>
+        <label>Vehicle (year, make, model)
+          <input type="text" name="vehicle" placeholder="2014 Honda Accord" />
+        </label>
+        <label>What's going on?
+          <textarea name="message" rows="4" placeholder="Brakes squealing, check-engine light on, due for an oil change…"></textarea>
+        </label>
+        <button class="btn btn--amber" type="submit"><svg><use href="assets/icons.svg#i-arrow"/></svg> Send Request</button>
+        <p class="form-note">This opens a pre-filled email to Preston. Prefer to talk? Call or text <a href="tel:9107567261">910-756-7261</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo-circle.png" alt="Preston on Wheels" />
+        <p>Preston Clymer, your mobile mechanic for Wilmington, Leland &amp; Burgaw. Quality service, honest pricing, we come to you.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Preston</a></li>
+          <li><a href="index.html#area">Service Area</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <ul class="footer__contact">
+          <li><a href="tel:9107567261"><svg><use href="assets/icons.svg#i-phone"/></svg> 910-756-7261</a></li>
+          <li><a href="mailto:clymerautoservice@gmail.com"><svg><use href="assets/icons.svg#i-mail"/></svg> clymerautoservice@gmail.com</a></li>
+          <li><svg><use href="assets/icons.svg#i-pin"/></svg> Wilmington · Leland · Burgaw</li>
+          <li><svg><use href="assets/icons.svg#i-clock"/></svg> By appointment, call or text</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Preston on Wheels · Preston Clymer Mobile Mechanic</span>
+      <span>Convenient · Reliable · Professional</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  document.getElementById('quote-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const f = e.target;
+    const name = f.name.value || 'Customer';
+    const subject = encodeURIComponent('Quote request: ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + (f.name.value || '') + '\n' +
+      'Phone: ' + (f.phone.value || '') + '\n' +
+      'City: ' + (f.city.value || '') + '\n' +
+      'Vehicle: ' + (f.vehicle.value || '') + '\n\n' +
+      (f.message.value || '')
+    );
+    window.location.href = 'mailto:clymerautoservice@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+</body>
+</html>

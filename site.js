@@ -6,6 +6,30 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
+  // ---- FAQ exclusive accordion with smooth open/close animation ----
+  const faqDetails = [...document.querySelectorAll('.faq details')];
+  if (faqDetails.length) {
+    faqDetails.forEach(detail => {
+      const summary = detail.querySelector('summary');
+      const body = detail.querySelector('p');
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (detail.classList.contains('faq-closing')) return;
+        if (detail.open) {
+          detail.classList.add('faq-closing');
+          body.addEventListener('animationend', function handler() {
+            detail.removeAttribute('open');
+            detail.classList.remove('faq-closing');
+            body.removeEventListener('animationend', handler);
+          });
+        } else {
+          faqDetails.forEach(other => { if (other !== detail && other.open) other.removeAttribute('open'); });
+          detail.setAttribute('open', '');
+        }
+      });
+    });
+  }
+
   // ---- close mobile nav on link click ----
   document.querySelectorAll('#navlinks a').forEach((a) => {
     a.addEventListener('click', () => document.getElementById('navlinks')?.classList.remove('open'));
@@ -19,7 +43,7 @@
       Leland:     [34.2563, -78.0447],
       Burgaw:     [34.5519, -77.9264],
     };
-    const map = L.map('map', { scrollWheelZoom: false, attributionControl: true }).setView([34.36, -77.97], 10);
+    const map = L.map('map', { scrollWheelZoom: false, attributionControl: true }).setView([34.2257, -77.9447], 10);
     window.__powMap = map;
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -32,14 +56,10 @@
       html: `<span class="pow-pin__dot"></span><span class="pow-pin__lbl">${label}</span>`,
       iconSize: [0, 0], iconAnchor: [0, 0],
     });
-    const group = [];
     Object.entries(cities).forEach(([name, latlng]) => {
       L.marker(latlng, { icon: pin(name) }).addTo(map)
         .bindPopup(`<strong>${name}</strong><br>In our service area`);
-      group.push(latlng);
     });
-    // frame all three cities
-    map.fitBounds(group, { padding: [70, 70] });
 
     setTimeout(() => map.invalidateSize(), 300);
   }

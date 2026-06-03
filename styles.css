@@ -92,6 +92,9 @@ p { text-wrap: pretty; }
 }
 .eyebrow--center { display: flex; justify-content: center; }
 .eyebrow--amber { color: var(--amber); }
+/* bar variant: left-side accent line, used in CTA bands instead of flanking rules */
+.eyebrow--bar { padding-left: 14px; position: relative; }
+.eyebrow--bar::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 70%; background: currentColor; border-radius: 2px; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -102,7 +105,7 @@ p { text-wrap: pretty; }
   cursor: pointer; transition: transform .15s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
   line-height: 1; white-space: nowrap;
 }
-.btn svg { width: 20px; height: 20px; }
+.btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
 .btn--navy { background: var(--navy); color: var(--cream); }
 .btn--navy:hover { background: var(--navy-900); transform: translateY(-2px); }
 .btn--cream { background: var(--cream); color: var(--navy); }
@@ -135,7 +138,8 @@ p { text-wrap: pretty; }
 .nav__links a[aria-current="page"] { color: #fff; }
 .nav__phone { display: inline-flex; align-items: center; gap: 11px; white-space: nowrap; padding: 13px 32px; letter-spacing: 0.04em; }
 .nav__phone svg { flex: none; }
-.nav__toggle { display: none; background: none; border: 0; color: var(--cream); cursor: pointer; }
+.nav__toggle { display: none; background: none; border: 0; color: var(--cream); cursor: pointer; padding: 6px; }
+.nav__toggle svg { stroke: currentColor; fill: none; stroke-width: 2; }
 
 /* ---------- footer ---------- */
 .footer { background: var(--navy-900); color: var(--cream); padding: 64px 0 32px; position: relative; z-index: 1; }
@@ -159,7 +163,7 @@ p { text-wrap: pretty; }
   box-shadow: 0 0 0 3px var(--navy);
   text-align: center; gap: 4px; padding: 10px;
 }
-.emblem svg { width: 36px; height: 36px; color: var(--cream); }
+.emblem svg { width: 36px; height: 36px; color: var(--cream); stroke: currentColor; fill: none; stroke-width: 1.6; }
 .emblem span { font-family: var(--font-head); font-size: 0.58rem; letter-spacing: 0.07em; line-height: 1.5; text-transform: uppercase; }
 .emblem .rule { width: 60%; height: 1px; background: var(--cream-light, var(--cream)); opacity: .4; }
 
@@ -180,7 +184,7 @@ p { text-wrap: pretty; }
   background: var(--navy); color: #fff;
   display: grid; place-items: center;
 }
-.svc__ic svg { width: 28px; height: 28px; }
+.svc__ic svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.8; }
 .svc__t { font-family: var(--font-head); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.15rem; line-height: 1; }
 .svc__d { font-size: 0.86rem; color: rgba(6,52,71,0.66); margin-top: 4px; }
 
@@ -191,7 +195,7 @@ p { text-wrap: pretty; }
   padding: 30px; display: flex; flex-direction: column; gap: 16px; position: relative;
 }
 .review__stars { display: flex; gap: 3px; color: var(--amber); }
-.review__stars svg { width: 20px; height: 20px; }
+.review__stars svg { width: 20px; height: 20px; fill: currentColor; stroke: none; }
 .review__body { font-size: 0.98rem; line-height: 1.62; }
 .review__who { display: flex; align-items: center; gap: 12px; margin-top: auto; }
 .review__avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); color: var(--cream); display: grid; place-items: center; font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; }
@@ -215,6 +219,11 @@ p { text-wrap: pretty; }
 }
 .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
 .faq p { padding: 0 48px 28px 0; opacity: 0.85; font-size: 1.02rem; }
+/* open animation — JS handles exclusive close with WAAPI close animation */
+.faq details[open] p { animation: faqIn 0.3s ease; }
+.faq details.faq-closing p { animation: faqOut 0.22s ease forwards; }
+@keyframes faqIn  { from { opacity: 0; transform: translateY(-6px); } to { opacity: 0.85; transform: none; } }
+@keyframes faqOut { from { opacity: 0.85; transform: none; } to { opacity: 0; transform: translateY(-6px); } }
 
 /* ---------- map ---------- */
 .map-wrap { position: relative; border: 3px solid var(--navy); border-radius: var(--radius); overflow: hidden; box-shadow: 0 16px 40px rgba(6,52,71,0.18); }
@@ -304,7 +313,8 @@ html[data-banner="cream"] .hero--banner .btn--outline.on-navy:hover { color: var
 .value p { font-size: 0.96rem; opacity: 0.78; }
 
 /* ---------- reviews head ---------- */
-.reviews-head { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 46px; }
+.reviews-head { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 46px; text-align: center; }
+.reviews-head .section-title { width: 100%; text-align: center; }
 
 /* ---------- cta band ---------- */
 .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
@@ -370,7 +380,7 @@ html[data-banner="cream"] .hero--banner .btn--outline.on-navy:hover { color: var
 .contact-list { list-style: none; display: flex; flex-direction: column; gap: 22px; margin-top: 34px; }
 .contact-list li { display: flex; align-items: center; gap: 16px; }
 .contact-list__ic { flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; }
-.contact-list__ic svg { width: 24px; height: 24px; }
+.contact-list__ic svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; }
 .contact-list__lbl { display: block; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; opacity: 0.6; }
 .contact-list__val { font-family: var(--font-head); font-size: 1.3rem; font-weight: 600; letter-spacing: 0.02em; }
 a.contact-list__val:hover { color: var(--amber-deep); }
@@ -448,8 +458,9 @@ a.contact-list__val:hover { color: var(--amber-deep); }
   /* hero split */
   .hero-split__art { padding: 36px 18px 44px; }
   .hero-logo { width: min(62%, 240px); }
-  .hero-stamps { gap: 8px; }
-  .stamp { font-size: 0.76rem; padding: 6px 12px; }
+  .hero-sub { margin-top: 40px; font-size: 1rem; line-height: 1.55; }
+  .hero-stamps { gap: 8px; justify-content: center; flex-wrap: nowrap; margin-top: 28px; }
+  .stamp { font-size: 0.7rem; padding: 5px 9px; letter-spacing: 0.08em; white-space: nowrap; }
 
   /* hero banner */
   .hero--banner { padding: 44px 0; }

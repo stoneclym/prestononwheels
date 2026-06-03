@@ -30,6 +30,34 @@
     });
   }
 
+  // ---- service carousel (home page) ----
+  const carousel = document.getElementById('svcCarousel');
+  if (carousel) {
+    const slides = [...carousel.querySelectorAll('.svc-slide')];
+    const dots = [...carousel.querySelectorAll('.svc-dot')];
+    let current = 0;
+    let timer;
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 3000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { goTo(i); startTimer(); });
+    });
+
+    startTimer();
+  }
+
   // ---- close mobile nav on link click ----
   document.querySelectorAll('#navlinks a').forEach((a) => {
     a.addEventListener('click', () => document.getElementById('navlinks')?.classList.remove('open'));

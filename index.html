@@ -40,7 +40,7 @@
     <div class="container">
       <span class="eyebrow eyebrow--amber both">Wilmington · Leland · Burgaw</span>
       <h1 class="display">The Garage<br/>That Comes<br/>To&nbsp;You</h1>
-      <p class="lead hero-sub">Honest, dependable auto repair at your driveway. No tow, no waiting room. Preston brings the shop to you.</p>
+      <p class="lead hero-sub">Honest, dependable auto repair at your driveway. Preston brings the shop to you.</p>
       <div class="hero-cta">
         <a class="btn btn--amber" href="tel:9107567261"><svg><use href="assets/icons.svg#i-phone"/></svg> Call 910-756-7261</a>
         <a class="btn btn--outline on-navy" href="services.html">View Services</a>
@@ -112,23 +112,63 @@
 <!-- ============ SERVICES PREVIEW ============ -->
 <section class="section section--cream" id="services">
   <div class="container">
-    <div class="kicker-row reveal">
-      <div>
-        <span class="eyebrow eyebrow--amber both">Repair Services Offered</span>
-        <h2 class="section-title">Whatever your<br/>vehicle needs</h2>
-      </div>
-      <a class="btn btn--navy" href="services.html">All Services <svg><use href="assets/icons.svg#i-arrow"/></svg></a>
+    <div class="reviews-head reveal">
+      <span class="eyebrow eyebrow--amber eyebrow--center both">Repair Services Offered</span>
+      <h2 class="section-title" style="text-align:center">Whatever your<br/>vehicle needs</h2>
     </div>
-    <div class="svc-grid svc-grid--3 reveal">
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-oil"/></svg></span><div><div class="svc__t">Oil Change</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-brake"/></svg></span><div><div class="svc__t">Brake Repair</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-tire"/></svg></span><div><div class="svc__t">Tire Rotation</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-battery"/></svg></span><div><div class="svc__t">Battery Testing</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-spark"/></svg></span><div><div class="svc__t">Spark Plugs</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-engine"/></svg></span><div><div class="svc__t">Engine Diagnostic</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-strut"/></svg></span><div><div class="svc__t">Struts &amp; Shocks</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-alternator"/></svg></span><div><div class="svc__t">Starters &amp; Alternators</div></div></div>
-      <div class="svc"><span class="svc__ic"><svg><use href="assets/icons.svg#i-radiator"/></svg></span><div><div class="svc__t">Water Pumps &amp; Radiators</div></div></div>
+    <div class="svc-carousel reveal" id="svcCarousel">
+      <div class="svc-carousel__track">
+        <div class="svc-slide active">
+          <img src="assets/mechanic-vignette.png" alt="Oil Change" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-oil"/></svg></span><span class="svc-slide__name">Oil Change</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Brake Repair" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-brake"/></svg></span><span class="svc-slide__name">Brake Repair</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Tire Rotation" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-tire"/></svg></span><span class="svc-slide__name">Tire Rotation</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Battery Testing" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-battery"/></svg></span><span class="svc-slide__name">Battery Testing</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Spark Plugs" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-spark"/></svg></span><span class="svc-slide__name">Spark Plugs</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Engine Diagnostic" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-engine"/></svg></span><span class="svc-slide__name">Engine Diagnostic</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Struts &amp; Shocks" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-strut"/></svg></span><span class="svc-slide__name">Struts &amp; Shocks</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Starters &amp; Alternators" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-alternator"/></svg></span><span class="svc-slide__name">Starters &amp; Alternators</span></div>
+        </div>
+        <div class="svc-slide">
+          <img src="assets/mechanic-vignette.png" alt="Water Pumps &amp; Radiators" />
+          <div class="svc-slide__overlay"><span class="svc__ic"><svg><use href="assets/icons.svg#i-radiator"/></svg></span><span class="svc-slide__name">Water Pumps &amp; Radiators</span></div>
+        </div>
+      </div>
+      <div class="svc-carousel__dots">
+        <button class="svc-dot active" data-index="0" aria-label="Oil Change"></button>
+        <button class="svc-dot" data-index="1" aria-label="Brake Repair"></button>
+        <button class="svc-dot" data-index="2" aria-label="Tire Rotation"></button>
+        <button class="svc-dot" data-index="3" aria-label="Battery Testing"></button>
+        <button class="svc-dot" data-index="4" aria-label="Spark Plugs"></button>
+        <button class="svc-dot" data-index="5" aria-label="Engine Diagnostic"></button>
+        <button class="svc-dot" data-index="6" aria-label="Struts &amp; Shocks"></button>
+        <button class="svc-dot" data-index="7" aria-label="Starters &amp; Alternators"></button>
+        <button class="svc-dot" data-index="8" aria-label="Water Pumps &amp; Radiators"></button>
+      </div>
+    </div>
+    <div class="svc-carousel__cta reveal">
+      <a class="btn btn--navy" href="services.html">All Services <svg><use href="assets/icons.svg#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -136,21 +176,13 @@
 <!-- ============ SERVICE AREA + MAP ============ -->
 <section class="section section--navy" id="area">
   <div class="container">
-    <div class="kicker-row reveal">
-      <div>
-        <span class="eyebrow eyebrow--amber both">Where We Roll</span>
-        <h2 class="section-title">Servicing the<br/>Cape Fear region</h2>
-      </div>
-      <p class="area-blurb">Based in Wilmington and covering the surrounding Cape Fear communities. If you're nearby and not sure, just ask, we travel.</p>
+    <div class="reviews-head reveal">
+      <span class="eyebrow eyebrow--amber eyebrow--center both">Where We Roll</span>
+      <h2 class="section-title" style="text-align:center">Servicing the<br/>Cape Fear region</h2>
+      <p class="area-blurb">Based in Wilmington and covering the surrounding Cape Fear communities. If you're nearby and not sure, just ask.</p>
     </div>
     <div class="map-wrap reveal">
       <div id="map"></div>
-    </div>
-    <div class="area-legend reveal">
-      <span class="city"><span class="dot"></span> Wilmington</span>
-      <span class="city"><span class="dot"></span> Leland</span>
-      <span class="city"><span class="dot"></span> Burgaw</span>
-      <span class="city" style="opacity:.7"><svg width="18" height="18" style="color:var(--amber)"><use href="assets/icons.svg#i-pin"/></svg> Surrounding areas, ask us!</span>
     </div>
   </div>
 </section>
@@ -236,10 +268,8 @@
 <!-- ============ CTA BANNER ============ -->
 <section class="section section--navy cta-band">
   <div class="container cta-band__inner reveal">
-    <div>
-      <span class="eyebrow eyebrow--amber both">Ready when you are</span>
-      <h2 class="section-title">Let's get you<br/>back on the road</h2>
-    </div>
+    <span class="eyebrow eyebrow--amber eyebrow--center both">Ready when you are</span>
+    <h2 class="section-title">Let's get you<br/>back on the road</h2>
     <div class="cta-band__actions">
       <a class="btn btn--amber" href="tel:9107567261"><svg><use href="assets/icons.svg#i-phone"/></svg> 910-756-7261</a>
       <a class="btn btn--cream" href="mailto:clymerautoservice@gmail.com"><svg><use href="assets/icons.svg#i-mail"/></svg> Email Us</a>

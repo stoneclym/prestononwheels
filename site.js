@@ -30,6 +30,34 @@
     });
   }
 
+  // ---- hero photo carousel ----
+  const heroCarousel = document.getElementById('heroCarousel');
+  if (heroCarousel) {
+    const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
+    const dots = [...heroCarousel.querySelectorAll('.hero-dot')];
+    let current = 0;
+    let timer;
+
+    function heroGoTo(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function heroStartTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => heroGoTo(current + 1), 3000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { heroGoTo(i); heroStartTimer(); });
+    });
+
+    heroStartTimer();
+  }
+
   // ---- service carousel (home page) ----
   const carousel = document.getElementById('svcCarousel');
   if (carousel) {
@@ -67,9 +95,12 @@
   const mapEl = document.getElementById('map');
   if (mapEl && window.L) {
     const cities = {
-      Wilmington: [34.2257, -77.9447],
-      Leland:     [34.2563, -78.0447],
-      Burgaw:     [34.5519, -77.9264],
+      Wilmington:      [34.2257, -77.9447],
+      Leland:          [34.2563, -78.0447],
+      Burgaw:          [34.5519, -77.9264],
+      'Castle Hayne':  [34.3280, -77.8931],
+      Hampstead:       [34.3612, -77.7114],
+      'Carolina Beach':[34.0357, -77.8982],
     };
     const map = L.map('map', { scrollWheelZoom: false, attributionControl: true }).setView([34.2257, -77.9447], 10);
     window.__powMap = map;
